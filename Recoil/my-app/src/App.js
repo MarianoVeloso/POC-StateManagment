@@ -20,8 +20,9 @@ const displayFullNameAtom = atom({
 function DisplayPerson() {
   const person = useRecoilValue(personAtom);
   const displayFullName = useRecoilValue(displayFullNameAtom);
+  useResetRecoilState(personAtom);
   console.log('Esto va a crear un conflicto')
-  
+
   return (
     displayFullName.displayFullName ?
       <div>
